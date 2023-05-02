@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Main() {
   return (
-    <div className=' text-center p-5 bg-yellow-100'>
-      <ul className='flex justify-between'>
+    <div className=' text-center bg-white'>
+      <ul className='flex justify-between items-center border p-5'>
         <li className=' font-bold text-3xl'>
           <span className=' text-green-950 '>Deshi</span>
           <span className=' text-red-800'>Kitchen</span>

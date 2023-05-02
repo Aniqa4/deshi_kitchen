@@ -6,8 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Layout from './Components/Layout';
-import Footer from './Components/Footer';
-import Home from './Components/Home';
+import Home from './Components/Home/Home';
 import Blog from './Components/Blog';
 import Login from './Components/Login';
 
