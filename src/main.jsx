@@ -9,6 +9,7 @@ import Layout from './Components/Layout';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
 import Blog from './Components/Blog';
+import Login from './Components/Login';
 
 const router = createBrowserRouter([
   {
@@ -22,12 +23,12 @@ const router = createBrowserRouter([
       {
         path:"/blog",
         element:<Blog></Blog>
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
       }
     ]
-  },
-  {
-    path:"/",
-    element:<Footer></Footer>
   }
 ]);
 
