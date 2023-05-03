@@ -37,7 +37,7 @@ function Recipes({ recipes }) {
                             </ul>
                             <p><span className=' text-black font-semibold '> Cooking Method</span>: {x.cooking_method}</p>
                             <p><span className=' text-black font-semibold '> Rating</span>: {x.rating}</p>
-                            <button className='text-black border-2 border-black rounded py-2 px-5 font-bold'>Add To Favorite</button>
+                            <button className='text-black border-2 border-black rounded py-2 px-5 font-bold mt-5'>Add To Favorite</button>
                         </div>
                     )
                 }
