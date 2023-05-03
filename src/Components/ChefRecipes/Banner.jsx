@@ -7,10 +7,9 @@ function Banner({ recipes }) {
     return <div>Loading...</div>;
   }
   const { chef_name, chef_picture, description, likes, number_of_recipes, years_of_experience } = recipes;
-  console.log(chef_name);
 
   return (
-    <div className='flex text-center items-center p-10 border my-10  text-gray-700'>
+    <div className='flex text-center items-center p-10 border my-10 bg-gray-100  text-gray-700'>
       <div>
         <img src={chef_picture} className='w-8/12' />
       </div>

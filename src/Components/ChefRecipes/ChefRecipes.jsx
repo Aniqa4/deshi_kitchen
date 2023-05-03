@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Banner from './Banner';
 import { useParams } from 'react-router-dom';
+import Recipes from './Recipes';
 
 function ChefRecipes(props) {
     const parameter = useParams();
@@ -20,6 +21,7 @@ function ChefRecipes(props) {
     return (
         <div>
             <Banner recipes={recipes}></Banner>
+            <Recipes recipes={recipes}></Recipes>
         </div>
     )
 }
