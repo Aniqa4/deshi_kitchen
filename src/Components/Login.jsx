@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -8,7 +9,7 @@ function Login() {
             <li><button className=' bg-black text-white rounded px-5 py-2'>Log In with Email/Password</button></li>
             <li><button className=' bg-black text-white rounded px-5 py-2 my-5'>Log In with Gmail</button></li>
             <li><button className=' bg-black text-white rounded px-5 py-2 mb-5'>Log In with GitHub</button></li>
-            <li>Do not have an account?<span className=' underline'> Register.</span></li>
+            <li>Do not have an account?<span className=' underline'><Link to="/registration"> Register.</Link></span></li>
         </ul>
     </div>
   )

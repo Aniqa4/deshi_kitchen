@@ -9,23 +9,33 @@ import Layout from './Components/Layout';
 import Home from './Components/Home/Home';
 import Blog from './Components/Blog';
 import Login from './Components/Login';
+import Registration from './Components/Registration';
+import ChefRecipes from './Components/ChefRecipes/ChefRecipes';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    children:[
+    children: [
       {
-        path:"/home",
-        element:<Home></Home>
+        path: "/home",
+        element: <Home></Home>
       },
       {
-        path:"/blog",
-        element:<Blog></Blog>
+        path: "/blog",
+        element: <Blog></Blog>
       },
       {
-        path:"/login",
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>
+      },
+      {
+        path: "/chefrecipes/:id",
+        element: <ChefRecipes></ChefRecipes>
       }
     ]
   }
