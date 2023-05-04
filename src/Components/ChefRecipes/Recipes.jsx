@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Recipes({ recipes }) {
     const [favoriteClicked, setFavoriteClicked] = useState(false);
@@ -13,6 +15,15 @@ function Recipes({ recipes }) {
      console.log('clicked');
         setFavoriteClicked(true);
         setIsFavoriteAdded(true);
+        toast.success('The Recipe is your favorite', {
+            position:'top-center',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
     }
 
     const recipe = recipes.recipes;
@@ -53,6 +64,7 @@ function Recipes({ recipes }) {
                     )
                 }
             </div>
+            <ToastContainer />
         </div>
     )
 }

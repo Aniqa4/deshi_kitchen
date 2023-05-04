@@ -23,9 +23,9 @@ function Main() {
         </li>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
-        <li className='md:flex'><span>
+        <li className='flex justify-center'><span>
           {
-            user && <img src={user.photoURL} className=' rounded-full w-6/12'/>
+            user && <img src={user.photoURL} className=' rounded-full' style={{width:"46px"}}/>
           }
         </span>
           {

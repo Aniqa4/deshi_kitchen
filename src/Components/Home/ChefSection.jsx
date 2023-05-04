@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 function ChefSection() {
@@ -18,7 +19,9 @@ function ChefSection() {
                 {
                     chefs.map(chef =>
                         <div key={chef.id} className='p-5 border rounded text-center'>
-                            <img src={chef.chef_picture} className='w-11/12 h-80 rounded mx-auto mb-3' />
+                            <LazyLoad>
+                                <img src={chef.chef_picture} className='w-11/12 h-80 rounded mx-auto mb-3' />
+                            </LazyLoad>
                             <p>Name : {chef.chef_name}</p>
                             <p>Years of experience : {chef.years_of_experience}</p>
                             <p>Number of recipes : {chef.number_of_recipes}</p>
