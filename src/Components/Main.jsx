@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
+import ActiveLink from './ActiveLink/ActiveLink';
 
 function Main() {
   const { user, logOut } = useContext(AuthContext);
@@ -21,11 +22,11 @@ function Main() {
           <span className=' text-green-950 '>Deshi</span>
           <span className=' text-red-800'>Kitchen</span>
         </li>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+        <li><ActiveLink to="/">Home</ActiveLink></li>
+        <li><ActiveLink to="/blog">Blog</ActiveLink></li>
         <li className='flex justify-center'><span>
           {
-            user && <img src={user.photoURL} className=' rounded-full' style={{width:"46px"}}/>
+            user && <img src={user.photoURL} className=' rounded-full' style={{width:"46px"}} title={user.displayName}/>
           }
         </span>
           {
