@@ -14,7 +14,7 @@ function ChefSection() {
     return (
         <div className='my-20 text-gray-800'>
             <h1 className=' text-center py-5 text-3xl font-semibold text-black'>Get Introduced With Our Chefs</h1>
-            <div className='grid grid-cols-3 gap-10'>
+            <div className='grid md:grid-cols-3 gap-10'>
                 {
                     chefs.map(chef =>
                         <div key={chef.id} className='p-5 border rounded text-center'>

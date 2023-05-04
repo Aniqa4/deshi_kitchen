@@ -3,7 +3,7 @@ import Banner from './Banner';
 import { useParams } from 'react-router-dom';
 import Recipes from './Recipes';
 
-function ChefRecipes(props) {
+function ChefRecipes() {
     const parameter = useParams();
     const id = parameter.id;
 

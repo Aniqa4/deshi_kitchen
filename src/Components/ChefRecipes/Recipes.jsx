@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Recipes({ recipes }) {
+    const [favoriteClicked, setFavoriteClicked] = useState(false);
+    const [isFavoriteAdded, setIsFavoriteAdded] = useState(false);
 
     if (!recipes) {
         // Render a loading state or return null if the recipes prop is not available yet
-        return <div>Loading...</div>;
+        return <div className="radial-progress text-center" style={{"--value":70}}>70%</div>;
+    }
+    
+    const handleFavoriteButton=()=>{
+     console.log('clicked');
+        setFavoriteClicked(true);
+        setIsFavoriteAdded(true);
     }
 
     const recipe = recipes.recipes;
@@ -14,7 +22,7 @@ function Recipes({ recipes }) {
             <h1 className=' text-center text-3xl font-semibold'>Recipes</h1>
             <div className='grid grid-cols-3 gap-5'>
                 {
-                    recipe.map((x,index) =>
+                    recipe.map((x, index) =>
                         <div key={index} className=' text-gray-700 border rounded p-5 my-5'>
                             <h1 className=' text-black font-semibold'>Recipe Name : {x.recipe_name}</h1>
                             <ul className='pb-5'>
@@ -36,7 +44,11 @@ function Recipes({ recipes }) {
                             </ul>
                             <p><span className=' text-black font-semibold '> Cooking Method</span>: {x.cooking_method}</p>
                             <p><span className=' text-black font-semibold '> Rating</span>: {x.rating}</p>
-                            <button className='text-black border-2 border-black rounded py-2 px-5 font-bold mt-5'>Add To Favorite</button>
+                            <button onClick={handleFavoriteButton} 
+                            className='text-black border-2 border-black rounded py-2 px-5 font-bold mt-5' disabled={favoriteClicked}>
+                                {isFavoriteAdded ? 'Added to Favorites' : 'Add To Favorite'}
+                            </button>
+
                         </div>
                     )
                 }

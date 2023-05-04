@@ -4,7 +4,7 @@ function Banner({ recipes }) {
 
   if (!recipes) {
     // Render a loading state or return null if the recipes prop is not available yet
-    return <div>Loading...</div>;
+    return <div></div>;
   }
   const { chef_name, chef_picture, description, likes, number_of_recipes, years_of_experience } = recipes;
 

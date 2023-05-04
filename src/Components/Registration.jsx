@@ -13,10 +13,9 @@ function Registration() {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    const name = form.name.value;
-    const photo = form.photo.value;
-    console.log(email, password, name, photo);
-
+    const displayName = form.name.value;
+    const photoURL = form.photo.value;
+    
     let errors = '';
 
     if (password.length < 6 && password.length != 0) {
