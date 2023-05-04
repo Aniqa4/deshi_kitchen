@@ -21,11 +21,11 @@ function Main() {
           <span className=' text-green-950 '>Deshi</span>
           <span className=' text-red-800'>Kitchen</span>
         </li>
-        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
         <li className='flex'><span>
           {
-            user && <p>{user.email}</p>
+            user && <img src={user.photoURL}/>
           }
         </span>
           {
