@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { AuthContext } from './providers/AuthProvider';
 
 function Main() {
+  const {user,logOut}=useContext(AuthContext);
+
+  const handleLogOut= () =>{
+    logOut()
+    .then()
+    .catch(error=>
+      console.log(error)
+    )
+  }
+
   return (
     <div className=' text-center bg-white'>
       <ul className='flex justify-between items-center border p-5'>
@@ -11,7 +22,13 @@ function Main() {
         </li>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
-        <li><button className=' bg-black text-white rounded px-5 py-2'><Link to="/login">Log In</Link></button></li>
+        <li>
+          {
+            user?
+            <button onClick={handleLogOut} className=' bg-black text-white rounded px-5 py-2'>Log Out</button>:
+            <button className=' bg-black text-white rounded px-5 py-2'><Link to="/login">Log In</Link></button>
+          }
+        </li>
       </ul>
     </div>
   )

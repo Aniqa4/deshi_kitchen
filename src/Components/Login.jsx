@@ -32,7 +32,9 @@ function Login() {
         <input type="password" name="password" placeholder='Password' className='border border-black p-2 my-2' />
         <input type="submit" value="Log In" className='border border-black p-2 font-semibold' />
       </form>
-      <hr />
+      <div className=' my-5'>
+        <hr />
+      </div>
       <div className='grid grid-cols-1'>
         <button className=' bg-black text-white rounded px-5 py-2 mb-2'>Log In with Google</button>
         <button className=' bg-black text-white rounded px-5 py-2'>Log In with GitHub</button>
