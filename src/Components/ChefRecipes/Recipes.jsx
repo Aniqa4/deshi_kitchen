@@ -8,15 +8,14 @@ function Recipes({ recipes }) {
     }
 
     const recipe = recipes.recipes;
-    console.log(recipe);
 
     return (
         <div>
             <h1 className=' text-center text-3xl font-semibold'>Recipes</h1>
             <div className='grid grid-cols-3 gap-5'>
                 {
-                    recipe.map(x =>
-                        <div className=' text-gray-700 border rounded p-5 my-5'>
+                    recipe.map((x,index) =>
+                        <div key={index} className=' text-gray-700 border rounded p-5 my-5'>
                             <h1 className=' text-black font-semibold'>Recipe Name : {x.recipe_name}</h1>
                             <ul className='pb-5'>
                                 <li className=' text-black font-semibold '>Ingredients:</li>

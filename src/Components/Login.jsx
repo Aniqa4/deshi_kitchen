@@ -1,9 +1,13 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
 
 function Login() {
-  const {logIn}=useContext(AuthContext)
+  const { logIn } = useContext(AuthContext)
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log('login page', location);
+  const from = location.state?.from?.pathname || "/home";
 
   const handleLogIn = event => {
     event.preventDefault();
@@ -14,15 +18,18 @@ function Login() {
 
     console.log(email, password);
 
-    logIn(email,password)
-    .then(result=>{
-      const  loggedUser=result.user;
-      console.log(loggedUser);
-    })
-    .catch(error=>{
-      console.log(error);
-      setError(error.message);
-    })
+    logIn(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate(from, { replace: true })
+      })
+      .catch(error => {
+        console.log(error);
+        setError(error.message);
+      })
+
   }
 
   return (
@@ -32,7 +39,7 @@ function Login() {
         <input type="password" name="password" placeholder='Password' className='border border-black p-2 my-2' />
         <input type="submit" value="Log In" className='border border-black p-2 font-semibold' />
       </form>
-      <div className=' my-5'>
+      <div className='my-5'>
         <hr />
       </div>
       <div className='grid grid-cols-1'>

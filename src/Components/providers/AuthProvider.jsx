@@ -21,13 +21,13 @@ function AuthProvider({ children }) {
         return signOut(auth);
     }
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth,loggedUser =>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             console.log('logged in user inside auth state observer', loggedUser);
             setUser(loggedUser)
         })
 
-        return ()=>{
+        return () => {
             unsubscribe()
         }
     })

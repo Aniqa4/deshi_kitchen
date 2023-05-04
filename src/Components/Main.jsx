@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './providers/AuthProvider';
 
 function Main() {
-  const {user,logOut}=useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-  const handleLogOut= () =>{
+  const handleLogOut = () => {
     logOut()
-    .then()
-    .catch(error=>
-      console.log(error)
-    )
+      .then()
+      .catch(error =>
+        console.log(error)
+      )
   }
+  //console.log(user);
 
   return (
     <div className=' text-center bg-white'>
@@ -22,11 +23,15 @@ function Main() {
         </li>
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/blog">Blog</Link></li>
-        <li>
+        <li className='flex'><span>
           {
-            user?
-            <button onClick={handleLogOut} className=' bg-black text-white rounded px-5 py-2'>Log Out</button>:
-            <button className=' bg-black text-white rounded px-5 py-2'><Link to="/login">Log In</Link></button>
+            user && <p>{user.email}</p>
+          }
+        </span>
+          {
+            user ?
+              <button onClick={handleLogOut} className=' bg-black text-white rounded px-5 py-2'>Log Out</button> :
+              <button className=' bg-black text-white rounded px-5 py-2'><Link to="/login">Log In</Link></button>
           }
         </li>
       </ul>

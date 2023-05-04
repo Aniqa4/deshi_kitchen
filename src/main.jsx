@@ -11,7 +11,8 @@ import Blog from './Components/Blog';
 import Login from './Components/Login';
 import Registration from './Components/Registration';
 import ChefRecipes from './Components/ChefRecipes/ChefRecipes';
-import {AuthProvider} from './Components/providers/AuthProvider';
+import { AuthProvider } from './Components/providers/AuthProvider';
+import PrivateRoute from './Components/privateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chefrecipes/:id",
-        element: <ChefRecipes></ChefRecipes>
+        element: <PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>
       }
     ]
   }

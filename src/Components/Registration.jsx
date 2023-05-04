@@ -5,7 +5,7 @@ import { AuthContext } from './providers/AuthProvider';
 
 function Registration() {
   const [error, setError] = useState('');
-  const {createUser}=useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
   const handleRegistration = event => {
     event.preventDefault();
@@ -14,12 +14,12 @@ function Registration() {
     const email = form.email.value;
     const password = form.password.value;
     const name = form.name.value;
-    const photo = form.text.value;
+    const photo = form.photo.value;
     console.log(email, password, name, photo);
 
     let errors = '';
 
-    if (password.length < 6&&password.length!=0) {
+    if (password.length < 6 && password.length != 0) {
       errors += 'Password must have at least 6 characters.';
     }
 
@@ -33,12 +33,17 @@ function Registration() {
 
     setError(errors.trim());
 
-    createUser(email,password)
-    .then(result=>{
-      const  loggedUser=result.user;
-      console.log(loggedUser);
-    })
-    
+    createUser(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+      })
+      .catch(error => {
+        console.log(error);
+        setError(error.message);
+      })
+
   }
   return (
     <div>
@@ -47,7 +52,7 @@ function Registration() {
           <input type="text" name="name" placeholder='Enter your name' className='border border-black p-2 mb-2' />
           <input type="email" name="email" placeholder='Email ' className='border border-black p-2 ' />
           <input type="password" name="password" placeholder='Password' className='border border-black p-2 my-2' />
-          <input type="text" name="text" placeholder='Enter your photo url' className='border border-black p-2 ' />
+          <input type="text" name="photo" placeholder='Enter your photo url' className='border border-black p-2 ' />
           <input type="submit" value="Register" className='border border-black p-2 font-semibold mt-2' />
         </form>
         <p className=' text-center pt-5'>Already have an account?<span className=' underline'><Link to="/login">Log In</Link></span></p>
