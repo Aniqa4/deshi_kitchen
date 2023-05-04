@@ -25,7 +25,7 @@ function Main() {
         <li><Link to="/blog">Blog</Link></li>
         <li className='flex'><span>
           {
-            user && <img src={user.photoURL}/>
+            user && <img src={user.photoURL} className=' rounded-full w-6/12'/>
           }
         </span>
           {

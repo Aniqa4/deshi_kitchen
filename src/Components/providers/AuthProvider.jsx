@@ -26,6 +26,10 @@ function AuthProvider({ children }) {
         return signInWithPopup(auth,google);
     }
 
+    const githubSignIn= (github) =>{
+        return signInWithPopup(auth,github);
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             console.log('logged in user inside auth state observer', loggedUser);
@@ -42,7 +46,8 @@ function AuthProvider({ children }) {
         createUser,
         logIn,
         logOut,
-        googleSignIn
+        googleSignIn,
+        githubSignIn
     }
     return (
         <AuthContext.Provider value={authInfo}>

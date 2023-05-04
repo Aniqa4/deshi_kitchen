@@ -13,8 +13,13 @@ import Registration from './Components/Registration';
 import ChefRecipes from './Components/ChefRecipes/ChefRecipes';
 import { AuthProvider } from './Components/providers/AuthProvider';
 import PrivateRoute from './Components/privateRoute/PrivateRoute';
+import ErrorPage from './Components/errorPage/ErrorPage';
 
 const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>
+  },
   {
     path: "/",
     element: <Layout></Layout>,
