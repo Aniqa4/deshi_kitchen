@@ -20,7 +20,7 @@ function ChefSection() {
                     chefs.map(chef =>
                         <div key={chef.id} className='p-5 border rounded text-center'>
                             <LazyLoad>
-                                <img src={chef.chef_picture} className='w-11/12 h-80 rounded mx-auto mb-3' />
+                                <img src={chef.chef_picture} className=' h-80 rounded mx-auto mb-3' />
                             </LazyLoad>
                             <p>Name : {chef.chef_name}</p>
                             <p>Years of experience : {chef.years_of_experience}</p>

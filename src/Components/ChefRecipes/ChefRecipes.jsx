@@ -19,7 +19,7 @@ function ChefRecipes() {
     const recipes = data.find(x => x.id == id)
 
     return (
-        <div>
+        <div className='md:container  md:mx-auto mx-5'>
             <Banner recipes={recipes}></Banner>
             <Recipes recipes={recipes}></Recipes>
         </div>

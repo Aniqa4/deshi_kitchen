@@ -13,7 +13,7 @@ function Blog() {
     });
   };
   return (
-    <div>
+    <div className='md:container  md:mx-auto mx-5'>
       <h1 className='text-center text-3xl font-semibold text-black'>
         Blog{' '}
         <span className='text-sm border bg-slate-500 rounded'>

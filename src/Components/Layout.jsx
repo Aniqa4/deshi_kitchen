@@ -6,7 +6,7 @@ import Footer from './Footer';
 function Layout() {
   return (
     <>
-      <div className='md:container md:mx-auto mx-5'>
+      <div className=' md:mx-auto mx-5'>
         <Main></Main>
         <Outlet></Outlet>
         <Footer></Footer>

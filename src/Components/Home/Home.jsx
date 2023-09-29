@@ -6,7 +6,7 @@ import Section2 from './Section2';
 
 function Home() {
   return (
-    <div>
+    <div className='md:container  md:mx-auto mx-5'>
       <Banner></Banner>
       <Section1></Section1>
       <ChefSection></ChefSection>
